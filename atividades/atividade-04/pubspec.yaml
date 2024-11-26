@@ -1,0 +1,16 @@
+name: atividade_04
+description: Projeto Dart utilizando o pacote sqlite3 para gerenciar banco de dados.
+version: 1.0.0
+
+environment:
+  sdk: ">=2.19.0 <4.0.0"
+
+dependencies:
+  sqlite3: ^2.1.0
+  sqflite_common_ffi: ^2.3.4+3
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.24.0
+
+
