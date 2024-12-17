@@ -20,6 +20,8 @@ void main() async {
     print('ID: ${aluno.id}, Nome: ${aluno.nome}, Idade: ${aluno.idade}');
   }
 
+  
+
   Aluno alunoAtualizado = Aluno(id: alunos[0].id, nome: 'João Silva', idade: 21);
   await dbHelper.atualizarAluno(alunoAtualizado);
   print('Aluno atualizado!');
@@ -38,6 +40,10 @@ void main() async {
   for (var aluno in alunos) {
     print('ID: ${aluno.id}, Nome: ${aluno.nome}, Idade: ${aluno.idade}');
   }
+  Aluno? alunoBuscado = await dbHelper.buscarAlunoEspecifico(23);
+    if(alunoBuscado != null){
+      print("O aluno encontrado foi: \n ID : ${alunoBuscado.id} \n Nome : ${alunoBuscado.nome} \n Idade : ${alunoBuscado.idade}");
+    }
 
   await dbHelper.deletarTodosAlunos();
   print("Todos foram deletados com sucesso");
@@ -47,6 +53,7 @@ void main() async {
   for (var aluno in alunos) {
     print('ID: ${aluno.id}, Nome: ${aluno.nome}, Idade: ${aluno.idade}');
   }
+
 
 
   await dbHelper.fechar();

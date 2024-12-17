@@ -37,6 +37,19 @@ class DatabaseHelper {
     return List.generate(maps.length, (i) => Aluno.fromMap(maps[i]));
   }
 
+  Future<Aluno?> buscarAlunoEspecifico(int id) async{
+    final List<Map<String,dynamic>> maps =  await _db.query(
+    'TB_ALUNOS', 
+    where: 'id = ?',
+    whereArgs: [id]);
+    if(maps.isNotEmpty){
+      return Aluno.fromMap(maps.first);
+    }else{
+      print("Aluno não encontrado");
+      return null;
+    }
+  }
+
   Future<int> atualizarAluno(Aluno aluno) async {
     return await _db.update(
       'TB_ALUNOS',
