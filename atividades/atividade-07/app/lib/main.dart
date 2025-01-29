@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           });
         },
         ),
-        '/catalog' : (context) => MyCatalog(title: 'Cataloh Screen',
+        '/catalog' : (context) => MyCatalog(title: 'Catalog Screen',
         isDarkMode: _isDarkMode,
         onThemeChanged: (value){
           setState(() {
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     
     return CustomScaffold(
-      title: "Exemplo de simple page",
+      title: "Feito por Lucas Gonzaga",
       body: Center(
        
         child: Column(
